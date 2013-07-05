@@ -1,12 +1,8 @@
-var express = require("express");
-var app = express();
-app.use(express.logger());
+import os
+from flask import Flask
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
-});
+app = Flask(__name__)
 
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
+@app.route('/')
+def hello():
+    return 'Hello World'
