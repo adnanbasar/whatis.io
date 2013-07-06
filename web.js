@@ -1,12 +1,24 @@
 var express = require("express");
+var http = require("http");
 var app = express();
-app.use(express.logger());
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
+app.all("*", function(request, response, next) {
+  response.writeHead(404, { "Content-Type": "text/plain" });
+  next();
 });
 
-var port = process.env.PORT || 5000;
-app.listen(port, function() {
-  console.log("Listening on " + port);
+app.get("/", function(request, response) {
+  response.end("Welcome to the homepage!");
 });
+
+app.get("/about", function(request, response) {
+  response.end("Welcome to the about page!");
+});
+
+app.get("*", function(request, response) {
+  response.end("404!");
+});
+
+http.createServer(app).listen(5000);
+
+
