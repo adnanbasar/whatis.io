@@ -23,15 +23,31 @@ app.use(app.router);
 app.use(require('less-middleware')({ src: __dirname + '/public' }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
+
 
 app.get('/',function(req,res){
 	res.render('index',{title:'Home'});
 });
-app.get('/users', user.list);
+
+//signup
+
+app.get('/signup',function(req,res){
+	res.send('Signup');
+});
+
+//login
+
+app.get('/login',function(req,res){
+	res.send('Login');
+});
+
+//users
+
+
+app.get('/user/:id', function(req, res){
+  res.send('user ' + req.params.id);
+});
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
