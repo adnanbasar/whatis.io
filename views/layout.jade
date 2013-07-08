@@ -2,6 +2,29 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/tuktuk.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Ubuntu')
   body
-    block content
+    header(class='bck margin-top margin-bottom')
+        .row
+            h2 whatis.io ?
+    section(class='bck darkest landing text center color white')
+        .main-content
+            block content
+    section(class='bck theme padding')
+        div(class='row text thin center')
+            p Mail us!
+        div(class='row')
+            div(class='column_6 offset_3 form subscribe')
+                | 
+                input(class='large',type='email',placeholder='your mail adress')
+                button(class='large anchor',align='center') Send
+    footer(class='bck dark padding')
+        div(class='row margin-top margin-bottom')
+            div(class='column_5')
+                p Join the team!
+            div(class='column_4')
+                p Questions
+            div(class='column_3')
+                p Contact us!
+    script(src='/stylesheets/tuktuk.js')
