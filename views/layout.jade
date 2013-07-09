@@ -3,17 +3,44 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/tuktuk.css')
+    link(rel='stylesheet', href='/stylesheets/tuktuk.icons.css')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Ubuntu')
   body
     header(class='bck margin-top margin-bottom')
         .row
-            h2 whatis.io ?
+            div(class='column_6')
+                h2 whatis.io ?
+            div(class='column_6 right text')
+                h2
+                    a(class='icon github margin-right',href='#')
+                    a(class='icon twitter',href='#')
     section(class='bck darkest landing text center color white')
-        .main-content
-            block content
+        div(class='row text center book')
+            div(class='column_10 offset_1')
+                h3 A New Hero on Information
+                h5
+                    strong whatis.io 
+                    
+                    p will make you hungry to learn new information and ask your questions in the shortest way. You will see how can be possible!
+        div(class='row text center margin-top')
+            div(class='column_3')
+                h3(class='icon pencil')
+                h5 Easy to use
+                p Dummy Exp
+            div(class='column_3')
+                h3(class='icon ok')
+                h5 Are You Sure?
+                p Dummy Exp
+            div(class='column_3')
+                h3(class='icon user')
+                h5 Collabrative Information
+                p Dummy Exp
+            div(class='column_3')
+                h3(class='icon cloud')
+                h5 Every Platform
+                p Dummy Exp
     section(class='bck theme padding')
         div(class='row text thin center')
-            p Mail us!
         div(class='row')
             div(class='column_6 offset_3 form subscribe')
                 | 
